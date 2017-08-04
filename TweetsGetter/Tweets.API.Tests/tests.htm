@@ -1,0 +1,91 @@
+﻿<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://w3.org/TR/html4/loose.dtd">-->
+<!DOCTYPE>
+<html>
+<head>
+    <title>Jasmine Spec Runner</title>
+
+    <!-- start with loading jasmine -->
+    <link rel="stylesheet" type="text/css" href="Content/jasmine/jasmine.css">
+
+   
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine-html.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/boot.min.js"></script>
+
+    <script type="text/javascript" src="Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="Scripts/angular-resource.min.js"></script>
+    <script type="text/javascript" src="Scripts/angular-mocks.js"></script>
+    
+    <script type="text/javascript" src="../Tweets.API/JS/app.js"></script>
+    <script type="text/javascript" src="../Tweets.API/JS/config.js"></script>
+    <script type="text/javascript" src="../Tweets.API/JS/controllers/LoginController.js"></script>
+    <script type="text/javascript" src="../Tweets.API/JS/resources/TweetResource.js"></script>
+    <script type="text/javascript" src="JS/TweetData-test.js"></script>
+    
+
+    <!--<script type="text/javascript">
+        window.addEventListener("load", function onLoad() {
+            var jasmineEnv = jasmine.getEnv(),
+                reporter = new jasmine.TrivialReporter();
+
+            jasmineEnv.addReporter(reporter);
+            setTimeout(function () {
+                jasmineEnv.execute();
+                // Without this setTimeout, the specs don't always get execute in webKit browsers, I don't know why
+            }, 10);
+            window.removeEventListener("load", onLoad, true);
+        }, true);
+    </script>-->
+    <!--<script type="text/javascript">
+
+        (function () {
+            var jasmineEnv = jasmine.getEnv();
+
+            var htmlReporter = new jasmine.TrivialReporter();
+            jasmine.addReporter(htmlReporter);
+            jasmineEnv.specFilter = function (spec) {
+                return htmlReporter.specFilter(spec);
+            }
+
+            window.onload = function () {
+                execJasmine();
+            }
+
+            function execJasmine() {
+                jasmineEnv.execute();
+            }
+        })();
+    </script>-->
+
+</head>
+<body ng-app="app">
+    <div id="HTMLReporter" class="jasmine_reporter"></div>
+    <script>
+        (function () {
+            var jasmineEnv = jasmine.getEnv();
+            jasmineEnv.updateInterval = 250;
+
+            var htmlReporter = new jasmine.HtmlReporter();
+            jasmineEnv.addReporter(htmlReporter);
+
+            jasmineEnv.specFilter = function (spec) {
+                return htmlReporter.specFilter(spec);
+            };
+
+            var currentWindowOnload = window.onload;
+            window.onload = function () {
+                if (currentWindowOnload) {
+                    currentWindowOnload();
+                }
+
+                execJasmine();
+            };
+
+            function execJasmine() {
+                jasmineEnv.execute();
+            }
+        })();
+    </script>
+</body>
+</html>

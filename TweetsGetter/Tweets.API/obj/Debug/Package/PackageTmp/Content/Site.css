@@ -1,0 +1,22 @@
+﻿
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Set padding to keep content from hitting the edges */
+.login-page .login-box {
+    padding: 100px 0;
+}
+
+
+.panel-default :hover {
+    background: #FFF0F5; /* make this whatever you want */
+    margin : 4px 10px 5px 4px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}

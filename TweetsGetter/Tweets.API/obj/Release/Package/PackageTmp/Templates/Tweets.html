@@ -1,0 +1,44 @@
+﻿<div>
+
+    <div class="text-center" ng-hide="loaded">
+        Loading...
+    </div>
+    <div ng-show="loaded">
+
+        <button class="btn btn-warning  pull-right" ng-click="logout()">Logout</button>
+        <div data-ng-repeat="tweet in tweets | limitTo:1">
+            <div class="panel panel-collapse">
+                <div class="panel-body">
+
+                    <img class="card-img-top" src="{{tweet.user.profile_image_url_https}}" alt="No Pictures">
+                    <h4 class="card-title">{{tweet.user.name}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{"@"+tweet.user.screen_name}}</h6>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-group">
+            <div data-ng-repeat="tweet in tweets">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="card">
+                            <div class="card-block">
+                                <p class="card-text">{{tweet.text}}</p>
+                            </div>
+                            <div data-ng-repeat="mediaurl in tweet.entities.media">
+                                <img class="card-img-top" src="{{mediaurl.media_url_https}}" alt="No Pictures" width="70%">
+                            </div>
+
+                            <div class="card-block">
+                                <p class="card-text"> {{ "Retweet Count: " + tweet.retweet_count}}</p>
+                                <p class="card-text"> {{"Created Date: "}}{{ tweet.created_at }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
