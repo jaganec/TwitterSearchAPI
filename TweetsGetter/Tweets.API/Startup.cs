@@ -11,6 +11,8 @@ namespace Tweets.API
     {
         public void Configuration(IAppBuilder app)
         {
+           
+
             ConfigureAuthZero(app);
             var config = new HttpConfiguration();
             WebApiConfig.Register(config);        

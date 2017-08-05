@@ -13,12 +13,6 @@
                 templateUrl: 'Templates/Tweets.html',
                 requiresLogin: true
             })
-            .when('/tweet', {
-                controller: 'TweetsController',
-                templateUrl: 'Templates/Tweets.html',
-                requiresLogin: true
-                
-            })
             .when('/login', {
                 controller: 'LoginController',
                 templateUrl: 'Templates/Login.html'

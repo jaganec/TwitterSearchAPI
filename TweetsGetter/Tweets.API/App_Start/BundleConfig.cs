@@ -8,11 +8,13 @@ namespace Tweets.API
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/angular.js",
-                        "~/Scripts/angular-resource.js",
-                        "~/Scripts/angular-route.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/angular.min.js",
+                        "~/Scripts/angular-route.min.js",
+                        "~/Scripts/angular-storage.min.js",
+                        "~/Scripts/angular-jwt.min.js",
+                        "~/Scripts/lock-7.min.js",
+                        "~/Scripts/auth0-angular-4.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/appcode").Include(
                 "~/JS/config.js",
                         "~/JS/app.js",
@@ -31,8 +33,8 @@ namespace Tweets.API
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css")
+                      .Include("~/Content/site.css"));
         }
     }
 }
