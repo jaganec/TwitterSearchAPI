@@ -1,4 +1,4 @@
-# To search for Tweets of an Twitter user 
+# To search for Tweets of a Twitter user 
 
  API authorization is through JWT token , Please refer https://auth0.com/ for more.
 
