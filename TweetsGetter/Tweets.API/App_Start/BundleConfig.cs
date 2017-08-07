@@ -10,6 +10,7 @@ namespace Tweets.API
         {
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/angular.min.js",
+                        "~/Scripts/angular-sanitize.min.js",
                         "~/Scripts/angular-route.min.js",
                         "~/Scripts/angular-storage.min.js",
                         "~/Scripts/angular-jwt.min.js",

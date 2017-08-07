@@ -1,11 +1,11 @@
-﻿describe('Testing services with $http dependency', function () {
+﻿describe('Testing factory method ', function () {
 
     var service, httpBackend, data;
 
-    beforeEach(module('Tweets'));
+    beforeEach(module('Tweet'));
 
-    beforeEach(inject(function (testService, _$httpBackend_) {
-        service = testService;
+    beforeEach(inject(function (TweetData, _$httpBackend_) {
+        service = TweetData;
         httpBackend = _$httpBackend_;
     }));
 
@@ -16,7 +16,7 @@
     it('should return get data when calling getData', function () {
         httpBackend.expectGET('/api/websearches').respond('some data');
 
-        service.getData(1).then(function (result) {
+        service.getData().then(function (result) {
             data = result;
         });
 

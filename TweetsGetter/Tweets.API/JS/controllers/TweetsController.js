@@ -1,12 +1,12 @@
 ﻿'use strict';
 angular.module('Tweets', [
-    'auth0'])
+    'auth0', 'ngSanitize','Tweet'])
     .controller('TweetsController', function ($scope, auth, $location, store, $timeout, TweetData) {
         $scope.tweets = [] ;
         $scope.auth = auth;
 
         $scope.viewTweet = function () {
-            TweetData.get().then(function (data) {
+            TweetData.getData().then(function (data) {
                 $scope.tweets = data;
             }, function () {
                 alert("Error getting users");

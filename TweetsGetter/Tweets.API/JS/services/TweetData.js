@@ -1,20 +1,12 @@
-﻿'use strict';
-angular
-    .module('Tweets')
-    .factory('TweetData', factory);
+﻿var app = angular.module('Tweet', []);
 
-function factory($http) {
-    var service = {
-        get: get,
-       
-    };
-    return service;
-    function get() {
-        return $http({ method: 'GET', url: '/api/websearches' })
-            .then(function (response) {
-                return response.data;
-            });
-
-    }   
-
-}
+ app.factory('TweetData', ['$http', function ($http) {    
+     return {
+         getData: function () {
+             return $http.get('/api/websearches')
+                 .then(function (result) {
+                     return result.data;
+                 });
+         }
+     };
+ }]);

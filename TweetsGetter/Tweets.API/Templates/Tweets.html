@@ -1,10 +1,7 @@
 ﻿<div style="margin:10px">
-
     <div class="ng-cloak">
 
-
         <div data-ng-repeat="tweet in tweets | limitTo:1">
-
             <div class="panel panel-collapse">
                 <div class="panel-body">
                     <button class="btn btn-warning  pull-right" ng-click="logout()">Logout</button>
@@ -20,9 +17,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 
@@ -32,15 +26,14 @@
                     <div class="panel-body">
                         <div class="card">
                             <div class="card-block">
-                                <p class="card-text">{{tweet.text}}</p>
-                            </div>
+                                <p class="card-text" ng-bind-html="tweet.text | linky"></p>
                             <div data-ng-repeat="mediaurl in tweet.entities.media">
                                 <img class="card-img-top" ng-src="{{mediaurl.media_url_https}}" alt="No Pictures" width="70%">
                             </div>
 
                             <div class="card-block">
                                 <p class="card-text"> {{ "Retweet Count: " + tweet.retweet_count}}</p>
-                                <p class="card-text"> {{"Created Date: "}}{{ tweet.created_at }}</p>
+                                <p class="card-text"> {{"Created Date: " + tweet.created_at }}</p>
                             </div>
                         </div>
                     </div>

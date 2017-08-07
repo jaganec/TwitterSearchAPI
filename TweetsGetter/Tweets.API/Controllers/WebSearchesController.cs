@@ -10,8 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Tweets.API.Controllers
 {
-    
-    
+    [Authorize]
     public class WebSearchesController : ApiController
     {
         // GET: api/WebSearches

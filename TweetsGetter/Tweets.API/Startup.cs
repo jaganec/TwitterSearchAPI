@@ -1,21 +1,21 @@
-﻿using System.Web.Http;
-using Microsoft.Owin;
-using Microsoft.Owin.Cors;
+﻿using Microsoft.Owin;
 using Owin;
-using Tweets.API;
+using System.Web.Http;
+using Microsoft.Owin.Cors;
+using Tweets.App_Start;
+using Microsoft.Practices.Unity.Mvc;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace Tweets.API
+namespace Tweets.App_Start
 {
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-           
 
-            ConfigureAuthZero(app);
+            // Configure Web API           
             var config = new HttpConfiguration();
-            WebApiConfig.Register(config);        
+            WebApiConfig.Register(config);
             app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);
         }

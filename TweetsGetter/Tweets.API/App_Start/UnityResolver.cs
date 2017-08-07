@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Tweets.API.App_Start
+namespace Tweets.App_Start
 {
     using Microsoft.Practices.Unity;
     using System;
